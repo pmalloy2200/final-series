@@ -11,30 +11,31 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main(void)
+int
+main (void)
 {
 
-float macheps = 1.;
-while ((float) (1. + macheps) != 1.)
-{
-    macheps /= 2;
-}
-printf("macheps = %g\n", macheps);
+    float macheps = 1.;
+    while ((float) (1. + macheps) != 1.)
+    {
+        macheps /= 2;
+    }
+    printf ("macheps = %g\n", macheps);
 
-int n =160, k;
-float f = 0;
+    int n = 160, k;
+    float f = 0;
     for (k = n; k >= 1.; k--)
     {
-    f = f + (1./pow(k,4));
+        f = f + (1. / pow (k, 4));
     }
- 
-float err = (pow(M_PI,4.)/90.) - f;
-printf("%g %d %g %g\n",f, n, err, macheps); 
+
+    float err = (pow (M_PI, 4.) / 90.) - f;
+    printf ("%g %d %g %g\n", f, n, err, macheps);
 
 
 
 
 
 
-return 0;
+    return 0;
 }
